@@ -1,20 +1,25 @@
+# S3 OAC
+resource "aws_cloudfront_origin_access_control" "oac" {
+    name = "s3-oac"
+    origin_access_control_origin_type = "s3"
+    signing_behavior = "always"
+    signing_protocol = "sigv4"
+}
+
+# CloudFront Distribution
 resource "aws_cloudfront_distribution" "s3_distribution" {
     origin {
-        domain_name = aws_s3_bucket_website_configuration.siteconfig.website_endpoint
+        domain_name = aws_s3_bucket.s3static.bucket_regional_domain_name
         origin_id = "S3-Website"
+        origin_access_control_id = aws_cloudfront_origin_access_control.oac.id
         
-        custom_origin_config {
-            http_port = 80
-            https_port = 443
-            origin_protocol_policy = "http-only"
-            origin_ssl_protocols = ["TLSv1.2"]
-        }
     }
 
     enabled = true
     default_root_object = "index.html"
 
     default_cache_behavior {
+
         allowed_methods = ["GET", "HEAD"]
         cached_methods = ["GET", "HEAD"]
         target_origin_id = "S3-Website"
