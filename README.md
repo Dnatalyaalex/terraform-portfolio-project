@@ -6,14 +6,16 @@ Client: James Smith, freelance web designer
 
 Project: Portfolio Website Deployment
 
-###Project Description:
+
+### Project Description:
 
 James Smith has designed a modern, responsive single-page portfolio website using Next.js. He needs this website hosted on a robust, scalable, and cost-effective platform with global availability and fast loading times.
 
 Your Role:
 As cloud engineers, you will deploy James's Next.js portfolio website on AWS using Infrastructure as Code (IaC) principles with Terraform.
 
-###Requirements
+
+### Requirements
 
 The website must be:
 
@@ -25,7 +27,8 @@ Cost-Effective: Optimized hosting costs without unnecessary expenses
 
 Fast Loading: Quick loading times for all visitors globally
 
-Project Objectives
+### Project Objectives
+
 By completing this project, you will:
 
 Deploy a Next.js website on AWS
@@ -42,7 +45,8 @@ Understanding Next.js
 What is Next.js?
 Next.js is an open-source React framework maintained by Vercel that enhances the development experience for building web applications.
 
-###Key Benefits
+
+### Key Benefits
 
 Server-Side Rendering (SSR): Generates pages on the server for each request
 
@@ -56,7 +60,8 @@ Built-In CSS and Sass Support: Easy styling implementation
 
 Automatic Code Splitting: Loads only necessary JavaScript for current page
 
-###Common Use Cases
+
+### Common Use Cases
 
 Static Websites: Blogs, landing pages, and portfolio sites
 
