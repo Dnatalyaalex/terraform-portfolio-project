@@ -37,7 +37,7 @@ By completing this project, you will:
 - Apply security and performance best practices
 - Host all project files and code on GitHub
 
-## Understanding Next.js
+<br>
 
 ### What is Next.js?
 
@@ -45,7 +45,7 @@ By completing this project, you will:
 
 <br>
 
-## *Key Benefits*
+### *Key Benefits*
 
 - Static Site Generation (SSG): Pre-renders pages at build time
 - File-Based Routing: Simplified navigation through file structure
@@ -65,11 +65,11 @@ ca-module-7
 
 <br>
 
-## *Architecture*
+### *Architecture*
 
 This project is a static website hosted on AWS using S3 and CloudFront.
 
-### Components:
+#### Components:
 
 - **S3 bucket** – stores the built static site files generated in the `nextjs-blog/out` directory
 - **CloudFront CDN** – provides global content delivery, HTTPS, and caching
@@ -84,12 +84,12 @@ User → CloudFront → S3 bucket (static files from /out)
 
 <br>
 
-## Deployment
+### Deployment
 
 This project uses Terraform for infrastructure provisioning and manual upload for deployment.
 Deployment consists of two steps:
 
-### 1. Infrastructure setup (Terraform)
+#### 1. Infrastructure setup (Terraform)
 
 Terraform is used to create AWS resources:
 
@@ -102,12 +102,13 @@ Terraform is used to create AWS resources:
 ```bash
 cd terraform-nextjs
 terraform init
-terraform apply```
+terraform apply
+```
 
-### 2. Upload all files from the /nextjs-blog/out directory to the bucket root.
+#### 2. Upload all files from the /nextjs-blog/out directory to the bucket root.
 
 
-#### Accessing the Website
+### Accessing the Website
 
 After deployment:
 
