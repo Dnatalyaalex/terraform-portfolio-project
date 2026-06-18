@@ -40,6 +40,7 @@ data "aws_iam_policy_document" "s3static_access_policy" {
   statement {
     sid    = "AllowCloudfrontOnly"
     effect = "Allow"
+    
     principals {
       type        = "Service"
       identifiers = ["cloudfront.amazonaws.com"]
@@ -51,11 +52,6 @@ data "aws_iam_policy_document" "s3static_access_policy" {
       "${aws_s3_bucket.s3static.arn}/*"
     ]
 
-    condition {
-      test     = "StringEquals"
-      variable = "AWS:SourceArn"
-      values   = ["arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/*"]
-    }
   }
 }
 
