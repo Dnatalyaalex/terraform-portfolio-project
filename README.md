@@ -107,6 +107,7 @@ terraform apply
 
 #### 2. Upload all files from the /nextjs-blog/out directory to the bucket root.
 
+<bry>
 
 ### Accessing the Website
 
