@@ -1,19 +1,10 @@
 # A backet for the files
 resource "aws_s3_bucket" "s3static" {
-    region = "eu-central-1"
     bucket = "s3staticnad"
 
     tags = {
         Name = "s3staticnad"
         env = "dev"
-    }
-}
-
-# Web site configuration
-resource "aws_s3_bucket_website_configuration" "siteconfig" {
-    bucket = aws_s3_bucket.s3static.id
-    index_document {
-        suffix = "index.html"
     }
 }
 
@@ -57,12 +48,6 @@ data "aws_iam_policy_document" "s3static_access_policy" {
         resources = [
             "${aws_s3_bucket.s3static.arn}/*"
         ]
-
-        condition {
-            test = "StringEquals"
-            variable = "AWS:SourceArn"
-            values = [aws_cloudfront_distribution.s3_distribution.arn] 
-        }
     }
 }
 
