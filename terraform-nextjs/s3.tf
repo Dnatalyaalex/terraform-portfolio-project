@@ -1,4 +1,4 @@
-# A backet for the files
+# A backet for the APP
 resource "aws_s3_bucket" "s3static" {
     bucket = "s3staticnad"
 
@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "s3static" {
     }
 }
 
-# S3 restrictions
+# S3 Restrictions
 resource "aws_s3_bucket_public_access_block" "s3static_access" {
     bucket = aws_s3_bucket.s3static.id
 
@@ -18,7 +18,7 @@ resource "aws_s3_bucket_public_access_block" "s3static_access" {
     restrict_public_buckets = true 
 }
 
-#S3 ownership
+#S3 Ownership
 resource "aws_s3_bucket_ownership_controls" "s3staticOwnership" {
     bucket = aws_s3_bucket.s3static.id
 
@@ -34,6 +34,8 @@ resource "aws_s3_bucket_policy" "s3_policy_attachment" {
 }
 
 
+data "aws_caller_identity" "current" {}
+
 data "aws_iam_policy_document" "s3static_access_policy" {
     statement {
         sid = "AllowCloudfrontOnly"
@@ -48,6 +50,12 @@ data "aws_iam_policy_document" "s3static_access_policy" {
         resources = [
             "${aws_s3_bucket.s3static.arn}/*"
         ]
+
+        condition {
+            test     = "StringEquals"
+            variable = "AWS:SourceArn"
+            values   = ["arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/*"]
+        }
     }
 }
 
