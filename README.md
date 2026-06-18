@@ -1,6 +1,6 @@
 ## **Client Project Brief**
 
-### Scenario Overview
+### *Scenario Overview*
 
 Client: James Smith, freelance web designer
 
@@ -8,7 +8,7 @@ Project: Portfolio Website Deployment
 
 <br>
 
-### Project Description:
+### *Project Description:*
 
 James Smith has designed a modern, responsive single-page portfolio website using Next.js. He needs this website hosted on a robust, scalable, and cost-effective platform with global availability and fast loading times.
 
@@ -17,7 +17,7 @@ As cloud engineers, you will deploy James's Next.js portfolio website on AWS usi
 
 <br>
 
-### Requirements
+### *Requirements*
 
 The website must be:
 
@@ -31,7 +31,7 @@ Fast Loading: Quick loading times for all visitors globally
 
 <br>
 
-### Project Objectives
+### *Project Objectives*
 
 By completing this project, you will:
 
@@ -51,7 +51,7 @@ Next.js is an open-source React framework maintained by Vercel that enhances the
 
 <br>
 
-### Key Benefits
+### *Key Benefits*
 
 Server-Side Rendering (SSR): Generates pages on the server for each request
 
@@ -67,7 +67,7 @@ Automatic Code Splitting: Loads only necessary JavaScript for current page
 
 <br>
 
-### Common Use Cases
+### *Common Use Cases*
 
 Static Websites: Blogs, landing pages, and portfolio sites
 
